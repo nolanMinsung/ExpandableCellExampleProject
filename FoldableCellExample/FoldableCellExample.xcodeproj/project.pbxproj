@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		4E0182E22D9108E200214C19 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4E0182E12D9108E200214C19 /* SnapKit */; };
+		4E0182E52D91091500214C19 /* FoldableCell in Frameworks */ = {isa = PBXBuildFile; productRef = 4E0182E42D91091500214C19 /* FoldableCell */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		4E0182BD2D91023A00214C19 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -65,6 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E0182E22D9108E200214C19 /* SnapKit in Frameworks */,
+				4E0182E52D91091500214C19 /* FoldableCell in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +132,8 @@
 			);
 			name = FoldableCellExample;
 			packageProductDependencies = (
+				4E0182E12D9108E200214C19 /* SnapKit */,
+				4E0182E42D91091500214C19 /* FoldableCell */,
 			);
 			productName = FoldableCellExample;
 			productReference = 4E0182A62D91023800214C19 /* FoldableCellExample.app */;
@@ -208,6 +217,10 @@
 			);
 			mainGroup = 4E01829D2D91023800214C19;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				4E0182E02D9108E200214C19 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				4E0182E32D91091500214C19 /* XCRemoteSwiftPackageReference "FoldableCell" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 4E0182A72D91023800214C19 /* Products */;
 			projectDirPath = "";
@@ -575,6 +588,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4E0182E02D9108E200214C19 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		4E0182E32D91091500214C19 /* XCRemoteSwiftPackageReference "FoldableCell" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nolanMinsung/FoldableCell";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4E0182E12D9108E200214C19 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4E0182E02D9108E200214C19 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		4E0182E42D91091500214C19 /* FoldableCell */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4E0182E32D91091500214C19 /* XCRemoteSwiftPackageReference "FoldableCell" */;
+			productName = FoldableCell;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4E01829E2D91023800214C19 /* Project object */;
 }

@@ -1,0 +1,24 @@
+{
+  "originHash" : "7775cdaf38b9c886e4b3e95ef4891b9252be7379352591a30e58f2cb40cfec28",
+  "pins" : [
+    {
+      "identity" : "foldablecell",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/nolanMinsung/FoldableCell",
+      "state" : {
+        "branch" : "main",
+        "revision" : "916924e9d9e7b4933a04538cc6d7a3fe51471bf0"
+      }
+    },
+    {
+      "identity" : "snapkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SnapKit/SnapKit",
+      "state" : {
+        "revision" : "2842e6e84e82eb9a8dac0100ca90d9444b0307f4",
+        "version" : "5.7.1"
+      }
+    }
+  ],
+  "version" : 3
+}
