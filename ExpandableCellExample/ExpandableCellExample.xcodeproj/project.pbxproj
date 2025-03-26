@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4E0182E22D9108E200214C19 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4E0182E12D9108E200214C19 /* SnapKit */; };
-		4E0183A62D9240DF00214C19 /* ExpandableCell in Frameworks */ = {isa = PBXBuildFile; productRef = 4E0183A52D9240DF00214C19 /* ExpandableCell */; };
-		4E01847B2D93EE4E00214C19 /* ExpandableCell in Frameworks */ = {isa = PBXBuildFile; productRef = 4E01847A2D93EE4E00214C19 /* ExpandableCell */; };
+		4E0182E22D9108E200214C19 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4E0182E12D9108E200214C19 /* SnapKit */; settings = {ATTRIBUTES = (Required, ); }; };
+		4E0185252D941ACB00214C19 /* ExpandableCell in Frameworks */ = {isa = PBXBuildFile; productRef = 4E0185242D941ACB00214C19 /* ExpandableCell */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,18 +29,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4E0182A62D91023800214C19 /* FoldableCellExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoldableCellExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4E0182BC2D91023A00214C19 /* FoldableCellExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoldableCellExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4E0182C62D91023A00214C19 /* FoldableCellExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoldableCellExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E0182A62D91023800214C19 /* ExpandableCellExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpandableCellExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E0182BC2D91023A00214C19 /* ExpandableCellExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpandableCellExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E0182C62D91023A00214C19 /* ExpandableCellExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpandableCellExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		4E0182CE2D91023A00214C19 /* Exceptions for "FoldableCellExample" folder in "FoldableCellExample" target */ = {
+		4E0185222D941A9C00214C19 /* Exceptions for "FoldableCellExample" folder in "ExpandableCellExample" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 4E0182A52D91023800214C19 /* FoldableCellExample */;
+			target = 4E0182A52D91023800214C19 /* ExpandableCellExample */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -49,19 +48,22 @@
 		4E0182A82D91023800214C19 /* FoldableCellExample */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				4E0182CE2D91023A00214C19 /* Exceptions for "FoldableCellExample" folder in "FoldableCellExample" target */,
+				4E0185222D941A9C00214C19 /* Exceptions for "FoldableCellExample" folder in "ExpandableCellExample" target */,
 			);
-			path = FoldableCellExample;
+			name = FoldableCellExample;
+			path = ExpandableCellExample;
 			sourceTree = "<group>";
 		};
 		4E0182BF2D91023A00214C19 /* FoldableCellExampleTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = FoldableCellExampleTests;
+			name = FoldableCellExampleTests;
+			path = ExpandableCellExampleTests;
 			sourceTree = "<group>";
 		};
 		4E0182C92D91023A00214C19 /* FoldableCellExampleUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = FoldableCellExampleUITests;
+			name = FoldableCellExampleUITests;
+			path = ExpandableCellExampleUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -71,8 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E01847B2D93EE4E00214C19 /* ExpandableCell in Frameworks */,
-				4E0183A62D9240DF00214C19 /* ExpandableCell in Frameworks */,
+				4E0185252D941ACB00214C19 /* ExpandableCell in Frameworks */,
 				4E0182E22D9108E200214C19 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,6 +101,7 @@
 				4E0182A82D91023800214C19 /* FoldableCellExample */,
 				4E0182BF2D91023A00214C19 /* FoldableCellExampleTests */,
 				4E0182C92D91023A00214C19 /* FoldableCellExampleUITests */,
+				4E0185212D9419D500214C19 /* Frameworks */,
 				4E0182A72D91023800214C19 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -107,19 +109,26 @@
 		4E0182A72D91023800214C19 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4E0182A62D91023800214C19 /* FoldableCellExample.app */,
-				4E0182BC2D91023A00214C19 /* FoldableCellExampleTests.xctest */,
-				4E0182C62D91023A00214C19 /* FoldableCellExampleUITests.xctest */,
+				4E0182A62D91023800214C19 /* ExpandableCellExample.app */,
+				4E0182BC2D91023A00214C19 /* ExpandableCellExampleTests.xctest */,
+				4E0182C62D91023A00214C19 /* ExpandableCellExampleUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		4E0185212D9419D500214C19 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4E0182A52D91023800214C19 /* FoldableCellExample */ = {
+		4E0182A52D91023800214C19 /* ExpandableCellExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4E0182CF2D91023A00214C19 /* Build configuration list for PBXNativeTarget "FoldableCellExample" */;
+			buildConfigurationList = 4E0182CF2D91023A00214C19 /* Build configuration list for PBXNativeTarget "ExpandableCellExample" */;
 			buildPhases = (
 				4E0182A22D91023800214C19 /* Sources */,
 				4E0182A32D91023800214C19 /* Frameworks */,
@@ -132,19 +141,19 @@
 			fileSystemSynchronizedGroups = (
 				4E0182A82D91023800214C19 /* FoldableCellExample */,
 			);
-			name = FoldableCellExample;
+			name = ExpandableCellExample;
 			packageProductDependencies = (
 				4E0182E12D9108E200214C19 /* SnapKit */,
 				4E0183A52D9240DF00214C19 /* ExpandableCell */,
-				4E01847A2D93EE4E00214C19 /* ExpandableCell */,
+				4E0185242D941ACB00214C19 /* ExpandableCell */,
 			);
 			productName = FoldableCellExample;
-			productReference = 4E0182A62D91023800214C19 /* FoldableCellExample.app */;
+			productReference = 4E0182A62D91023800214C19 /* ExpandableCellExample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4E0182BB2D91023A00214C19 /* FoldableCellExampleTests */ = {
+		4E0182BB2D91023A00214C19 /* ExpandableCellExampleTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4E0182D42D91023A00214C19 /* Build configuration list for PBXNativeTarget "FoldableCellExampleTests" */;
+			buildConfigurationList = 4E0182D42D91023A00214C19 /* Build configuration list for PBXNativeTarget "ExpandableCellExampleTests" */;
 			buildPhases = (
 				4E0182B82D91023A00214C19 /* Sources */,
 				4E0182B92D91023A00214C19 /* Frameworks */,
@@ -158,16 +167,16 @@
 			fileSystemSynchronizedGroups = (
 				4E0182BF2D91023A00214C19 /* FoldableCellExampleTests */,
 			);
-			name = FoldableCellExampleTests;
+			name = ExpandableCellExampleTests;
 			packageProductDependencies = (
 			);
 			productName = FoldableCellExampleTests;
-			productReference = 4E0182BC2D91023A00214C19 /* FoldableCellExampleTests.xctest */;
+			productReference = 4E0182BC2D91023A00214C19 /* ExpandableCellExampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		4E0182C52D91023A00214C19 /* FoldableCellExampleUITests */ = {
+		4E0182C52D91023A00214C19 /* ExpandableCellExampleUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4E0182D72D91023A00214C19 /* Build configuration list for PBXNativeTarget "FoldableCellExampleUITests" */;
+			buildConfigurationList = 4E0182D72D91023A00214C19 /* Build configuration list for PBXNativeTarget "ExpandableCellExampleUITests" */;
 			buildPhases = (
 				4E0182C22D91023A00214C19 /* Sources */,
 				4E0182C32D91023A00214C19 /* Frameworks */,
@@ -181,11 +190,11 @@
 			fileSystemSynchronizedGroups = (
 				4E0182C92D91023A00214C19 /* FoldableCellExampleUITests */,
 			);
-			name = FoldableCellExampleUITests;
+			name = ExpandableCellExampleUITests;
 			packageProductDependencies = (
 			);
 			productName = FoldableCellExampleUITests;
-			productReference = 4E0182C62D91023A00214C19 /* FoldableCellExampleUITests.xctest */;
+			productReference = 4E0182C62D91023A00214C19 /* ExpandableCellExampleUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -211,7 +220,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4E0182A12D91023800214C19 /* Build configuration list for PBXProject "FoldableCellExample" */;
+			buildConfigurationList = 4E0182A12D91023800214C19 /* Build configuration list for PBXProject "ExpandableCellExample" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -222,16 +231,16 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				4E0182E02D9108E200214C19 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				4E0184792D93EE4E00214C19 /* XCRemoteSwiftPackageReference "ExpandableCell" */,
+				4E0185232D941ACB00214C19 /* XCRemoteSwiftPackageReference "ExpandableCell" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 4E0182A72D91023800214C19 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4E0182A52D91023800214C19 /* FoldableCellExample */,
-				4E0182BB2D91023A00214C19 /* FoldableCellExampleTests */,
-				4E0182C52D91023A00214C19 /* FoldableCellExampleUITests */,
+				4E0182A52D91023800214C19 /* ExpandableCellExample */,
+				4E0182BB2D91023A00214C19 /* ExpandableCellExampleTests */,
+				4E0182C52D91023A00214C19 /* ExpandableCellExampleUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -287,12 +296,12 @@
 /* Begin PBXTargetDependency section */
 		4E0182BE2D91023A00214C19 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4E0182A52D91023800214C19 /* FoldableCellExample */;
+			target = 4E0182A52D91023800214C19 /* ExpandableCellExample */;
 			targetProxy = 4E0182BD2D91023A00214C19 /* PBXContainerItemProxy */;
 		};
 		4E0182C82D91023A00214C19 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4E0182A52D91023800214C19 /* FoldableCellExample */;
+			target = 4E0182A52D91023800214C19 /* ExpandableCellExample */;
 			targetProxy = 4E0182C72D91023A00214C19 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -307,7 +316,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 548W892M42;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FoldableCellExample/Info.plist;
+				INFOPLIST_FILE = ExpandableCellExample/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FoldableCellExample;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -338,7 +347,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 548W892M42;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FoldableCellExample/Info.plist;
+				INFOPLIST_FILE = ExpandableCellExample/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FoldableCellExample;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -494,7 +503,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FoldableCellExample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FoldableCellExample";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExpandableCellExample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ExpandableCellExample";
 			};
 			name = Debug;
 		};
@@ -513,7 +522,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FoldableCellExample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FoldableCellExample";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExpandableCellExample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ExpandableCellExample";
 			};
 			name = Release;
 		};
@@ -554,7 +563,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4E0182A12D91023800214C19 /* Build configuration list for PBXProject "FoldableCellExample" */ = {
+		4E0182A12D91023800214C19 /* Build configuration list for PBXProject "ExpandableCellExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4E0182D22D91023A00214C19 /* Debug */,
@@ -563,7 +572,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4E0182CF2D91023A00214C19 /* Build configuration list for PBXNativeTarget "FoldableCellExample" */ = {
+		4E0182CF2D91023A00214C19 /* Build configuration list for PBXNativeTarget "ExpandableCellExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4E0182D02D91023A00214C19 /* Debug */,
@@ -572,7 +581,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4E0182D42D91023A00214C19 /* Build configuration list for PBXNativeTarget "FoldableCellExampleTests" */ = {
+		4E0182D42D91023A00214C19 /* Build configuration list for PBXNativeTarget "ExpandableCellExampleTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4E0182D52D91023A00214C19 /* Debug */,
@@ -581,7 +590,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4E0182D72D91023A00214C19 /* Build configuration list for PBXNativeTarget "FoldableCellExampleUITests" */ = {
+		4E0182D72D91023A00214C19 /* Build configuration list for PBXNativeTarget "ExpandableCellExampleUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4E0182D82D91023A00214C19 /* Debug */,
@@ -601,7 +610,7 @@
 				minimumVersion = 5.7.1;
 			};
 		};
-		4E0184792D93EE4E00214C19 /* XCRemoteSwiftPackageReference "ExpandableCell" */ = {
+		4E0185232D941ACB00214C19 /* XCRemoteSwiftPackageReference "ExpandableCell" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/nolanMinsung/ExpandableCell.git";
 			requirement = {
@@ -621,9 +630,9 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = ExpandableCell;
 		};
-		4E01847A2D93EE4E00214C19 /* ExpandableCell */ = {
+		4E0185242D941ACB00214C19 /* ExpandableCell */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4E0184792D93EE4E00214C19 /* XCRemoteSwiftPackageReference "ExpandableCell" */;
+			package = 4E0185232D941ACB00214C19 /* XCRemoteSwiftPackageReference "ExpandableCell" */;
 			productName = ExpandableCell;
 		};
 /* End XCSwiftPackageProductDependency section */
