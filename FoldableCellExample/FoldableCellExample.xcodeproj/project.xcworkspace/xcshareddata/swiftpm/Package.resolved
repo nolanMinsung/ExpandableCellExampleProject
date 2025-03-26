@@ -1,13 +1,13 @@
 {
-  "originHash" : "7775cdaf38b9c886e4b3e95ef4891b9252be7379352591a30e58f2cb40cfec28",
+  "originHash" : "195c2e73d6741f7717ae6a258924aa26327f2c0d245bae59b7658ef66992b576",
   "pins" : [
     {
-      "identity" : "foldablecell",
+      "identity" : "expandablecell",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/nolanMinsung/FoldableCell",
+      "location" : "https://github.com/nolanMinsung/ExpandableCell.git",
       "state" : {
         "branch" : "main",
-        "revision" : "916924e9d9e7b4933a04538cc6d7a3fe51471bf0"
+        "revision" : "652b9f9ad2677edadb37333aca4c31e9c2635c6b"
       }
     },
     {

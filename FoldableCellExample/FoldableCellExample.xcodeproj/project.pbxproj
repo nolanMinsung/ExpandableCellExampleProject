@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4E0182E22D9108E200214C19 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4E0182E12D9108E200214C19 /* SnapKit */; };
-		4E0182E52D91091500214C19 /* FoldableCell in Frameworks */ = {isa = PBXBuildFile; productRef = 4E0182E42D91091500214C19 /* FoldableCell */; };
+		4E0183A62D9240DF00214C19 /* ExpandableCell in Frameworks */ = {isa = PBXBuildFile; productRef = 4E0183A52D9240DF00214C19 /* ExpandableCell */; };
+		4E01847B2D93EE4E00214C19 /* ExpandableCell in Frameworks */ = {isa = PBXBuildFile; productRef = 4E01847A2D93EE4E00214C19 /* ExpandableCell */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,8 +71,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E01847B2D93EE4E00214C19 /* ExpandableCell in Frameworks */,
+				4E0183A62D9240DF00214C19 /* ExpandableCell in Frameworks */,
 				4E0182E22D9108E200214C19 /* SnapKit in Frameworks */,
-				4E0182E52D91091500214C19 /* FoldableCell in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,7 +135,8 @@
 			name = FoldableCellExample;
 			packageProductDependencies = (
 				4E0182E12D9108E200214C19 /* SnapKit */,
-				4E0182E42D91091500214C19 /* FoldableCell */,
+				4E0183A52D9240DF00214C19 /* ExpandableCell */,
+				4E01847A2D93EE4E00214C19 /* ExpandableCell */,
 			);
 			productName = FoldableCellExample;
 			productReference = 4E0182A62D91023800214C19 /* FoldableCellExample.app */;
@@ -219,7 +222,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				4E0182E02D9108E200214C19 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				4E0182E32D91091500214C19 /* XCRemoteSwiftPackageReference "FoldableCell" */,
+				4E0184792D93EE4E00214C19 /* XCRemoteSwiftPackageReference "ExpandableCell" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 4E0182A72D91023800214C19 /* Products */;
@@ -309,8 +312,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -340,8 +343,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -598,9 +601,9 @@
 				minimumVersion = 5.7.1;
 			};
 		};
-		4E0182E32D91091500214C19 /* XCRemoteSwiftPackageReference "FoldableCell" */ = {
+		4E0184792D93EE4E00214C19 /* XCRemoteSwiftPackageReference "ExpandableCell" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/nolanMinsung/FoldableCell";
+			repositoryURL = "https://github.com/nolanMinsung/ExpandableCell.git";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -614,10 +617,14 @@
 			package = 4E0182E02D9108E200214C19 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		4E0182E42D91091500214C19 /* FoldableCell */ = {
+		4E0183A52D9240DF00214C19 /* ExpandableCell */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4E0182E32D91091500214C19 /* XCRemoteSwiftPackageReference "FoldableCell" */;
-			productName = FoldableCell;
+			productName = ExpandableCell;
+		};
+		4E01847A2D93EE4E00214C19 /* ExpandableCell */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4E0184792D93EE4E00214C19 /* XCRemoteSwiftPackageReference "ExpandableCell" */;
+			productName = ExpandableCell;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

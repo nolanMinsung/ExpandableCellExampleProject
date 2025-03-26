@@ -1,5 +1,5 @@
 //
-//  SettingItem.swift
+//  DataModel.swift
 //  FoldableCellExample
 //
 //  Created by 김민성 on 3/24/25.
@@ -7,10 +7,10 @@
 
 import UIKit
 
-struct SettingItem {
+struct DataModel {
     var title: String
     var icon: UIImage?
-    var description1: String
-    var description2: String
+    var summary: String
+    var details: String
 }
 
