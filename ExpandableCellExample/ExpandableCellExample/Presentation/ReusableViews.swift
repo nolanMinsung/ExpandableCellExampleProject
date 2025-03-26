@@ -176,7 +176,7 @@ class MyHeaderView: UICollectionReusableView {
         background.addSubview(title)
         
         background.snp.makeConstraints { make in
-            make.horizontalEdges.equalToSuperview().inset(20)
+            make.horizontalEdges.equalToSuperview().inset(15)
             make.verticalEdges.equalToSuperview().inset(5)
         }
         

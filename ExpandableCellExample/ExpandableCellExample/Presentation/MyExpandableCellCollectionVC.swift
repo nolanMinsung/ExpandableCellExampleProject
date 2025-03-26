@@ -49,7 +49,8 @@ extension MyExpandableCellCollectionVC {
         }
     }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    override func collectionView(_ collectionView: UICollectionView,
+                                 cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: "MyExpandableCell", for: indexPath
         ) as? MyExpandableCell else { fatalError() }
@@ -61,7 +62,6 @@ extension MyExpandableCellCollectionVC {
             let data = self.movieList[indexPath.item]
             cell.configure(with: data)
         }
-        
         return cell
     }
     
@@ -77,22 +77,14 @@ extension MyExpandableCellCollectionVC {
         return view
     }
     
-    
 }
 
 extension MyExpandableCellCollectionVC: UICollectionViewDelegateFlowLayout {
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        referenceSizeForHeaderInSection section: Int) -> CGSize {
         return .init(width: 5, height: 100)
-    }
-    
-}
-
-
-extension MyExpandableCellCollectionVC {
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print("scrollViewDidScroll: \(scrollView.contentOffset.y)")
     }
     
 }

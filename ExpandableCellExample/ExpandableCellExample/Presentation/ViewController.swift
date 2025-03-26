@@ -12,23 +12,22 @@ import SnapKit
 
 class ViewController: UIViewController {
     
-    let exCellCollectionViewController = MyExpandableCellCollectionVC()
-//    var exCellCollectionView: ExpandableCellCollectionView { exCellCollectionViewController.defaultCollectionView }
-    var exCellCollectionView: ExpandableCellCollectionView { exCellCollectionViewController.collectionView }
+    private let exCellCollectionVC = MyExpandableCellCollectionVC()
+    private var exCellCollectionView: ExpandableCellCollectionView { exCellCollectionVC.collectionView }
     
-    let switchName: UILabel = {
+    private let switchLabel: UILabel = {
         let label = UILabel()
         label.text = "Enable Multi Selection"
         return label
     }()
-    lazy var toggleSwitch: UISwitch = {
+    private lazy var multiSelectionSwitch: UISwitch = {
         let toggleSwitch = UISwitch()
         toggleSwitch.isOn = false
         toggleSwitch.addTarget(self, action: #selector(toggleMultiSelection), for: .valueChanged)
         return toggleSwitch
     }()
-    lazy var switchStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [switchName, toggleSwitch])
+    private lazy var switchStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [switchLabel, multiSelectionSwitch])
         stackView.axis = .vertical
         stackView.spacing = 10
         stackView.distribution = .fillProportionally
@@ -36,11 +35,10 @@ class ViewController: UIViewController {
         return stackView
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addChild(exCellCollectionViewController)
+        addChild(exCellCollectionVC)
         setupViewHierarchy()
         setupStyle()
         setupLayoutConstraints()
@@ -55,7 +53,7 @@ class ViewController: UIViewController {
     }
     
     private func setupViewHierarchy() {
-        view.addSubview(exCellCollectionViewController.view)
+        view.addSubview(exCellCollectionVC.view)
         view.addSubview(switchStackView)
     }
     
@@ -65,7 +63,8 @@ class ViewController: UIViewController {
     
     private func setupLayoutConstraints() {
         exCellCollectionView.snp.makeConstraints { make in
-            make.top.horizontalEdges.equalToSuperview()
+            make.top.equalToSuperview()
+            make.horizontalEdges.equalToSuperview()
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(150)
         }
         
@@ -73,15 +72,14 @@ class ViewController: UIViewController {
             make.centerX.equalToSuperview()
             make.top.equalTo(exCellCollectionView.snp.bottom).offset(40)
         }
-        
     }
     
     private func setupCollectionView() {
-        exCellCollectionViewController.animationSpeed = .slow
+        exCellCollectionVC.animationSpeed = .slow
     }
     
     @objc private func toggleMultiSelection() {
-        exCellCollectionView.allowsMultipleSelection = toggleSwitch.isOn
+        exCellCollectionView.allowsMultipleSelection = multiSelectionSwitch.isOn
     }
 
 }
