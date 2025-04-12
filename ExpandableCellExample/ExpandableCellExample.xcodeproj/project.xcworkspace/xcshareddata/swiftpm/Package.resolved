@@ -1,15 +1,6 @@
 {
-  "originHash" : "195c2e73d6741f7717ae6a258924aa26327f2c0d245bae59b7658ef66992b576",
+  "originHash" : "4cdad746817ac9ed37e44dbe90a2ff25fc018954899b7d513e41a4bfc70f065a",
   "pins" : [
-    {
-      "identity" : "expandablecell",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/nolanMinsung/ExpandableCell.git",
-      "state" : {
-        "branch" : "main",
-        "revision" : "652b9f9ad2677edadb37333aca4c31e9c2635c6b"
-      }
-    },
     {
       "identity" : "snapkit",
       "kind" : "remoteSourceControl",

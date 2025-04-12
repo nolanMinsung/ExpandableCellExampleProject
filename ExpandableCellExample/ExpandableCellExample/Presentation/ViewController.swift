@@ -12,9 +12,11 @@ import SnapKit
 
 class ViewController: UIViewController {
     
-    private let exCellCollectionVC = MyExpandableCellCollectionVC()
-    private var exCellCollectionView: ExpandableCellCollectionView { exCellCollectionVC.collectionView }
+    private var sectionTitles: [String] = ["⚙️", "🎬"]
+    private var settingDataList: [DataModel] = dummySettings
+    private var movieList: [Movie] = movieData
     
+    private var exCellCollectionView = MyCollectionView()
     private let switchLabel: UILabel = {
         let label = UILabel()
         label.text = "Enable Multi Selection"
@@ -38,7 +40,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addChild(exCellCollectionVC)
         setupViewHierarchy()
         setupStyle()
         setupLayoutConstraints()
@@ -53,12 +54,13 @@ class ViewController: UIViewController {
     }
     
     private func setupViewHierarchy() {
-        view.addSubview(exCellCollectionVC.view)
+        view.addSubview(exCellCollectionView)
         view.addSubview(switchStackView)
     }
     
     private func setupStyle() {
         view.backgroundColor = .systemBackground
+        exCellCollectionView.isMultipleTouchEnabled = true
     }
     
     private func setupLayoutConstraints() {
@@ -75,12 +77,74 @@ class ViewController: UIViewController {
     }
     
     private func setupCollectionView() {
-        exCellCollectionVC.animationSpeed = .slow
+        exCellCollectionView.animationSpeed = .slow
+
+        exCellCollectionView.register(MyExpandableCell.self, forCellWithReuseIdentifier: "MyExpandableCell")
+        exCellCollectionView.register(
+            MyHeaderView.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: "MyHeaderView"
+        )
+        
+        exCellCollectionView.dataSource = self
+        // exCellCollectionView.delegate = self 🚨 Error!
+        
     }
     
     @objc private func toggleMultiSelection() {
         exCellCollectionView.allowsMultipleSelection = multiSelectionSwitch.isOn
     }
 
+}
+
+
+extension ViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if section == 0 {
+            return settingDataList.count
+        } else {
+            return movieList.count
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                                 cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: "MyExpandableCell", for: indexPath
+        ) as? MyExpandableCell else { fatalError() }
+        
+        if indexPath.section == 0 {
+            let data = self.settingDataList[indexPath.item]
+            cell.configure(with: data)
+        } else {
+            let data = self.movieList[indexPath.item]
+            cell.configure(with: data)
+        }
+        return cell
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                                 viewForSupplementaryElementOfKind kind: String,
+                                 at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "MyHeaderView", for: indexPath) as? MyHeaderView else { fatalError() }
+        view.title.text = sectionTitles[indexPath.section]
+        return view
+    }
+    
+}
+
+extension ViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return .init(width: 5, height: 100)
+    }
+    
 }
 

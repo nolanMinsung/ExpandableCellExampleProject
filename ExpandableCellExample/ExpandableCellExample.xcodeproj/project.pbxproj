@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4E0182E22D9108E200214C19 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4E0182E12D9108E200214C19 /* SnapKit */; settings = {ATTRIBUTES = (Required, ); }; };
-		4E0185252D941ACB00214C19 /* ExpandableCell in Frameworks */ = {isa = PBXBuildFile; productRef = 4E0185242D941ACB00214C19 /* ExpandableCell */; };
+		4E38A3602DAA5F8D00110780 /* ExpandableCell in Frameworks */ = {isa = PBXBuildFile; productRef = 4E0183A52D9240DF00214C19 /* ExpandableCell */; };
+		4E38A3832DAA604F00110780 /* ExpandableCell in Frameworks */ = {isa = PBXBuildFile; productRef = 4E38A3822DAA604F00110780 /* ExpandableCell */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +74,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E0185252D941ACB00214C19 /* ExpandableCell in Frameworks */,
+				4E38A3832DAA604F00110780 /* ExpandableCell in Frameworks */,
+				4E38A3602DAA5F8D00110780 /* ExpandableCell in Frameworks */,
 				4E0182E22D9108E200214C19 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,7 +147,7 @@
 			packageProductDependencies = (
 				4E0182E12D9108E200214C19 /* SnapKit */,
 				4E0183A52D9240DF00214C19 /* ExpandableCell */,
-				4E0185242D941ACB00214C19 /* ExpandableCell */,
+				4E38A3822DAA604F00110780 /* ExpandableCell */,
 			);
 			productName = FoldableCellExample;
 			productReference = 4E0182A62D91023800214C19 /* ExpandableCellExample.app */;
@@ -231,7 +233,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				4E0182E02D9108E200214C19 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				4E0185232D941ACB00214C19 /* XCRemoteSwiftPackageReference "ExpandableCell" */,
+				4E38A3812DAA604F00110780 /* XCLocalSwiftPackageReference "../../../Library/ExpandableCell" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 4E0182A72D91023800214C19 /* Products */;
@@ -601,6 +603,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		4E38A3812DAA604F00110780 /* XCLocalSwiftPackageReference "../../../Library/ExpandableCell" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../../Library/ExpandableCell;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		4E0182E02D9108E200214C19 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -608,14 +617,6 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.7.1;
-			};
-		};
-		4E0185232D941ACB00214C19 /* XCRemoteSwiftPackageReference "ExpandableCell" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/nolanMinsung/ExpandableCell.git";
-			requirement = {
-				branch = main;
-				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -630,9 +631,8 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = ExpandableCell;
 		};
-		4E0185242D941ACB00214C19 /* ExpandableCell */ = {
+		4E38A3822DAA604F00110780 /* ExpandableCell */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4E0185232D941ACB00214C19 /* XCRemoteSwiftPackageReference "ExpandableCell" */;
 			productName = ExpandableCell;
 		};
 /* End XCSwiftPackageProductDependency section */
