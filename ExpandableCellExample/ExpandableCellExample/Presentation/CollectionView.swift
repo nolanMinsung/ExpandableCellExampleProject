@@ -24,6 +24,22 @@ final class MyCollectionView: ExpandableCellCollectionView {
 /// If you need to implement additional behavior related to `UICollectionViewDelegate` or `UIScrollViewDelegate`, subclass `ExpandableCellCollectionView` and implement the appropriate delegate methods.
 extension MyCollectionView {
     
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: ExpandableCell, forItemAt indexPath: IndexPath) {
+        print("will Display \(indexPath)")
+    }
+    
+    override func collectionView(_ collectionView: ExpandableCellCollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? MyExpandableCell else { return false }
+        print("unfolding [\(cell.titleLabel.text!)]")
+        return true
+    }
+    
+    override func collectionView(_ collectionView: ExpandableCellCollectionView, shouldDeselectItemAt indexPath: IndexPath) -> Bool {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? MyExpandableCell else { return false }
+        print("folding [\(cell.titleLabel.text!)]")
+        return true
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("collectionView did Select at \(indexPath)")
     }
