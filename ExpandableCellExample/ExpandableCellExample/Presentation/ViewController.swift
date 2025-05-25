@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     private var settingDataList: [DataModel] = dummySettings
     private var movieList: [Movie] = movieData
     
-    private var exCellCollectionView = MyCollectionView()
+    private var exCellCollectionView = ExpandableCellCollectionView(horizontalContentInset: 20, verticalContentInset: 20, minimumLineSpacing: 20)
     private let switchLabel: UILabel = {
         let label = UILabel()
         label.text = "Enable Multi Selection"
@@ -87,7 +87,7 @@ class ViewController: UIViewController {
         )
         
         exCellCollectionView.dataSource = self
-        // exCellCollectionView.delegate = self 🚨 Error!
+        exCellCollectionView.delegate = self
         
     }
     
@@ -96,7 +96,6 @@ class ViewController: UIViewController {
     }
 
 }
-
 
 extension ViewController: UICollectionViewDataSource {
     
@@ -134,6 +133,38 @@ extension ViewController: UICollectionViewDataSource {
         guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "MyHeaderView", for: indexPath) as? MyHeaderView else { fatalError() }
         view.title.text = sectionTitles[indexPath.section]
         return view
+    }
+    
+}
+
+extension ViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        print("will Display \(indexPath)")
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? MyExpandableCell else { return false }
+        print("unfolding [\(cell.titleLabel.text!)]")
+        return true
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, shouldDeselectItemAt indexPath: IndexPath) -> Bool {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? MyExpandableCell else { return false }
+        print("folding [\(cell.titleLabel.text!)]")
+        return true
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("collectionView did Select at \(indexPath)")
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        print("collectinoView did Deselect at \(indexPath)")
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print("scrollView did scroll: \(scrollView.contentOffset)")
     }
     
 }
