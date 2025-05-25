@@ -16,7 +16,11 @@ class ViewController: UIViewController {
     private var settingDataList: [DataModel] = dummySettings
     private var movieList: [Movie] = movieData
     
-    private var exCellCollectionView = ExpandableCellCollectionView(horizontalContentInset: 20, verticalContentInset: 20, minimumLineSpacing: 20)
+    private var exCellCollectionView = ExpandableCellCollectionView(
+        horizontalContentInset: 20,
+        verticalContentInset: 20,
+        minimumLineSpacing: 20
+    )
     private let switchLabel: UILabel = {
         let label = UILabel()
         label.text = "Enable Multi Selection"
@@ -79,7 +83,10 @@ class ViewController: UIViewController {
     private func setupCollectionView() {
         exCellCollectionView.animationSpeed = .slow
 
-        exCellCollectionView.register(MyExpandableCell.self, forCellWithReuseIdentifier: "MyExpandableCell")
+        exCellCollectionView.register(
+            MyExpandableCell.self,
+            forCellWithReuseIdentifier: "MyExpandableCell"
+        )
         exCellCollectionView.register(
             MyHeaderView.self,
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
@@ -88,7 +95,6 @@ class ViewController: UIViewController {
         
         exCellCollectionView.dataSource = self
         exCellCollectionView.delegate = self
-        
     }
     
     @objc private func toggleMultiSelection() {
@@ -99,7 +105,8 @@ class ViewController: UIViewController {
 
 extension ViewController: UICollectionViewDataSource {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
             return settingDataList.count
         } else {
@@ -108,7 +115,7 @@ extension ViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView,
-                                 cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: "MyExpandableCell", for: indexPath
         ) as? MyExpandableCell else { fatalError() }
@@ -128,8 +135,8 @@ extension ViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView,
-                                 viewForSupplementaryElementOfKind kind: String,
-                                 at indexPath: IndexPath) -> UICollectionReusableView {
+                        viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
         guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "MyHeaderView", for: indexPath) as? MyHeaderView else { fatalError() }
         view.title.text = sectionTitles[indexPath.section]
         return view
@@ -139,18 +146,26 @@ extension ViewController: UICollectionViewDataSource {
 
 extension ViewController: UICollectionViewDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView,
+                        willDisplay cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
         print("will Display \(indexPath)")
     }
     
-    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        guard let cell = collectionView.cellForItem(at: indexPath) as? MyExpandableCell else { return false }
+    func collectionView(_ collectionView: UICollectionView,
+                        shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? MyExpandableCell else {
+            return false
+        }
         print("unfolding [\(cell.titleLabel.text!)]")
         return true
     }
     
-    func collectionView(_ collectionView: UICollectionView, shouldDeselectItemAt indexPath: IndexPath) -> Bool {
-        guard let cell = collectionView.cellForItem(at: indexPath) as? MyExpandableCell else { return false }
+    func collectionView(_ collectionView: UICollectionView,
+                        shouldDeselectItemAt indexPath: IndexPath) -> Bool {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? MyExpandableCell else {
+            return false
+        }
         print("folding [\(cell.titleLabel.text!)]")
         return true
     }
